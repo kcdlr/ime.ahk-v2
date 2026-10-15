@@ -9,7 +9,7 @@ IME_GET(WinTitle:="A")  {
     if !(WinActive(WinTitle))
         return -1
 
-    hwnd := WinGetID
+    hwnd := WinGetID()
     ptrSize := !A_PtrSize ? 4 : A_PtrSize
     cbSize:=4+4+(PtrSize*6)+16
     stGTI := Buffer(cbSize, 0)
@@ -34,7 +34,7 @@ IME_SET(SetSts, WinTitle:="A"){
     if !(WinActive(WinTitle))
         return -1
 
-    hwnd := WinGetID
+    hwnd := WinGetID()
     ptrSize := !A_PtrSize ? 4 : A_PtrSize
     cbSize:=4+4+(PtrSize*6)+16
     stGTI := Buffer(cbSize, 0)
